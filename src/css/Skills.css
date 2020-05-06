@@ -1,0 +1,19 @@
+ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+li {
+    font-weight: bold;
+}
+
+.alert {
+ background-color: #000000;
+ height: 50px;
+ width: auto;   
+}
+
+.anotherClass {
+    border-radius: 15px;
+}
