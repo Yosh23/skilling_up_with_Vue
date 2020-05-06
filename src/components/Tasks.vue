@@ -1,29 +1,31 @@
 <template>
+
     <div class="holder">
+      <h1>Things you need to do</h1>
       <!-- this handels my form submission and prevents the page from refreshing and has hooked to my "addTask" method on line 56 -->
-      <form @submit.prevent="addTask">
+      <form class="flex" @submit.prevent="addTask">
       <!-- looks like v-model is letting me access my data object and directly change the task value string -->
       <input type="text" placeholder="enter task" v-model="task">
       {{ task }}
-     <button type="submit">Submit Task</button>
+     <md-button class="md-raised md-primary" type="submit">Submit Task</md-button>
       </form>
 
       <ul class="list">
-        <li v-for="(data, index) in tasks" :key='index'>{{ data.task }}
+        <li class="flex" v-for="(data, index) in tasks" :key='index'>{{ data.task }}
            <!-- putting the button inside my list allows me to access my index of my tasks data which is why we are seeing it delete -->
-           <button @click="deleteTask(index)">X</button>
+           <md-button class="md-raised md-accent" @click="deleteTask(index)">Remove</md-button>
 
         </li>
       </ul>
-      <p>Things you need to do</p>
+      
 
 
 
 
 
-
-      <div v-bind:class="alertObject"></div>
-      <div v-bind:style="{ backgroundColor: bgColor, width: bgWidth, height: bgHeight }"></div>
+      <!-- this is me playing with v-bind -->
+      <div v-bind:class="alertObject" style="display: none;"></div>
+      <div v-bind:style="{ backgroundColor: bgColor, width: bgWidth, height: bgHeight }" style="display: none;"></div>
     </div>
 </template>
 
