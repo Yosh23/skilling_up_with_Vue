@@ -41,9 +41,9 @@ export default {
       // this task string is being hooked up by v-model
       task: '',
       tasks: [
-        { "task": "Work"},
-        { "task": "Work more"},
-        { "task": "Play"},
+        { "task": "Vue"},
+        { "task": "Vue Material"},
+        { "task": "Javascript"},
       ],
       // I linked to this object with the v-bind on line 7 
       // these are acting like a list of classes. 
