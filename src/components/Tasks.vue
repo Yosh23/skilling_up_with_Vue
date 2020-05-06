@@ -7,7 +7,7 @@
       <!-- looks like v-model is letting me access my data object and directly change the task value string -->
       <input type="text" placeholder="enter task" v-model="task">
       {{ task }}
-     <md-button class="md-raised md-primary" type="submit">Submit Task</md-button>
+     <md-button class="grow md-raised md-primary" type="submit">Submit Task</md-button>
       </form>
 
       <ul class="list">

@@ -28,7 +28,7 @@
   }
 
   input {
-    width: calc(100% - 40px);
+    width: 75%;
     border: 0;
     padding: 20px;
     font-size: 1.3em;
@@ -39,6 +39,9 @@
   .flex {
     display: flex;
     justify-content: space-between;
+  }
+  .grow {
+    flex-grow: 1;
   }
 
 .alert {
