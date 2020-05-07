@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import { ValidationProvider, extend } from 'vee-validate'
+import { ValidationObserver, ValidationProvider, extend } from 'vee-validate'
 import { required } from 'vee-validate/dist/rules'
 extend('required',{
   ...required,
@@ -19,6 +19,7 @@ extend('min', {
   }
 })
 // using Vue.component makes validation global and can now use inside my Tasks.vue
+Vue.component ('ValidationObserver', ValidationObserver);
 Vue.component('ValidationProvider', ValidationProvider);
 // these 4 lines of code are how you imoprt and use vue-material
 import { MdButton } from 'vue-material/dist/components'
