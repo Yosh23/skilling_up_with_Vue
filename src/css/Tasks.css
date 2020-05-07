@@ -43,6 +43,13 @@
   .grow {
     flex-grow: 1;
   }
+  .enter-task{ 
+    margin-bottom: 1em;
+  }
+  .md-lg {
+    height:3.5em;
+    margin-top:4em;
+  }
 
 .alert {
  background-color: #000000;

@@ -5,24 +5,25 @@
       <!-- this handels my form submission and prevents the page from refreshing and has hooked to my "addTask" method on line 56 -->
       <form class="flex" @submit.prevent="addTask">
       <!-- looks like v-model is letting me access my data object and directly change the task value string -->
-      <input type="text" placeholder="enter task" v-model="task">
-      {{ task }}
-     <md-button class="grow md-raised md-primary" type="submit">Submit Task</md-button>
+      <!-- looks like there is a but with my required text appearing after task is submitted
+           rules are working but can still submit even if it doesn't fit the rules parameter 
+           the name parameter is what our validation provider is placing in the {_field_} object in our message 
+           also what is v-slot doing?" -->
+      <ValidationProvider name="Task" rules="required|min:5" v-slot="{ errors }">
+        <h3 style="text-align: left; margin:1em 0 0 2em;">Task</h3>     
+        <input v-model="task" class="enter-task" type="text" placeholder="enter task" >
+      <p style="margin-top:-3em; margin-left:2em; text-align: left;">{{ errors[0] }}</p>
+      </ValidationProvider>
+      <!-- This just showed me that we were changing data -->
+      <!-- {{ task }} -->
+     <md-button class="grow md-raised md-primary md-lg" type="submit">Submit Task</md-button>
       </form>
-
       <ul class="list">
         <li class="flex" v-for="(data, index) in tasks" :key='index'>{{ data.task }}
            <!-- putting the button inside my list allows me to access my index of my tasks data which is why we are seeing it delete -->
            <md-button class="md-raised md-accent" @click="deleteTask(index)">Remove</md-button>
-
         </li>
       </ul>
-      
-
-
-
-
-
       <!-- this is me playing with v-bind -->
       <div v-bind:class="alertObject" style="display: none;"></div>
       <div v-bind:style="{ backgroundColor: bgColor, width: bgWidth, height: bgHeight }" style="display: none;"></div>
